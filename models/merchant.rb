@@ -11,15 +11,20 @@ require_relative('./user')
 class Merchant
 
   attr_reader :id
-  attr_accessor :merchant_name, :category
+  attr_accessor :merchant_name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @merchant_name = options['merchant_name']
   end
 
+  def self.delete_all
+    sql = "DELETE FROM merchants"
+    SqlRunner.run(sql)
+  end
+
   def save
-    sql = "INSERT INTO merchants (merchant_name, category)
+    sql = "INSERT INTO merchants (merchant_name)
     VALUES ($1) RETURNING id"
     values = [@merchant_name]
     arr = SqlRunner.run(sql, values).first
@@ -31,11 +36,6 @@ class Merchant
     values = SqlRunner.run(sql)
     result = values.map { | merchants | Merchant.new(merchants) }
     return result
-  end
-
-  def self.delete_all
-    sql = "DELETE FROM merchants"
-    SqlRunner.run(sql)
   end
 
   def update

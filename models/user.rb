@@ -19,6 +19,11 @@ class User
     @funds = options['funds'].to_i
   end
 
+  def self.delete_all
+    sql = "DELETE FROM users"
+    SqlRunner.run(sql)
+  end
+  
   def save
     sql = "INSERT INTO users (user_name, funds)
     VALUES ($1, $2) RETURNING id"
@@ -34,10 +39,7 @@ class User
     return result
   end
 
-  def self.delete_all
-    sql = "DELETE FROM users"
-    SqlRunner.run(sql)
-  end
+
 
   def update
     sql = "UPDATE users

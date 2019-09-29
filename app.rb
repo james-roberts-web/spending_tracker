@@ -13,3 +13,12 @@ merchant1.save
 
 category1 = Category.new({'transaction_type' => 'Groceries'})
 category1.save
+
+transaction1 = Transaction.new({
+  'user_id' => 1,
+  'merchant_id' => 1,
+  'category_id' => 1,
+  'transaction_time' => '2019-09-29 12:00',
+  'amount' => 599
+  })
+transaction1.save

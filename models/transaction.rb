@@ -23,7 +23,7 @@ class Transaction
   end
 
   def save
-    sql = "INSERT INTO transactions (user_id, merchant_id, transaction_time, amount)
+    sql = "INSERT INTO transactions (user_id, merchant_id, category_id, transaction_time, amount)
     VALUES ($1, $2, $3, $4, $5) RETURNING id"
     values = [@user_id, @merchant_id, @category_id, @transaction_time, @amount]
     arr = SqlRunner.run(sql, values).first

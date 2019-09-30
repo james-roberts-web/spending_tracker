@@ -12,11 +12,6 @@ end
 
 #TRANSACTIONS
 
-# get '/transactions/index' do
-#   @transaction = Transaction.all
-#   erb(:"transactions/index")
-# end
-
 get '/transactions' do
   @transactions = Transaction.all
   erb(:"transactions/index")

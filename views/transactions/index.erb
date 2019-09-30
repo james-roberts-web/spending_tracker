@@ -7,3 +7,23 @@
     <% end %>
   </ul>
 </div>
+
+<h1>Transactions:</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Merchant</th>
+    <th>Category</th>
+    <th>Amount</th>
+  </tr>
+
+  <% for transaction in @transactions %>
+  <tr>
+    <td><%= transaction.transaction_date %></td>
+    <td><%= transaction.merchant_id %></td>
+    <td><%= transaction.category_id %></td>
+    <td><%= transaction.amount %></td>
+  </tr>
+  <% end %>
+</table>

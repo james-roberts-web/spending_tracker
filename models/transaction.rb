@@ -50,9 +50,9 @@ class Transaction
 
   def update
     sql = "UPDATE transactions
-    SET user_id, merchant_id, category_id, transaction_date, amount)
+    SET (user_id, amount, transaction_date, merchant_id, category_id)
     VALUES ($1, $2, $3, $4, $5) WHERE id = $6"
-    values = [@user_id, @merchant_id, @category_id, @transaction_date, @amount, @id]
+    values = [@user_id, @amount, @transaction_date, @merchant_id, @category_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -71,8 +71,6 @@ class Transaction
     transaction = Transaction.new(result)
     return transaction
   end
-
-
 
   def find_merchant_name
     sql = "SELECT merchant_name FROM merchants
@@ -104,12 +102,11 @@ class Transaction
     return result
   end
 
-  # def self.total_spent
-  #   amount = self.amount
-  #   spend = amount.map{|amount|amount.amount}
-  #   total = amount.reduce(0){|total_amount, amount|total_amount += amount}
-  #   return total
-  # end
-
+#   def amount(array)
+#     total = array.reduce(0){|total_amount, amount|total_amount += amount}
+#     return total
+#   end
+#
+# binding.pry
 
 end

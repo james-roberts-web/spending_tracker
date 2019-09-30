@@ -1,9 +1,17 @@
+.container{
+  width: 1200px;
+  flex-flow: wrap;
+  position: relative;
+}
+
 body{
-  background-color: lightgrey;
+  background-color: #00263e;
+  position: relative;
   margin: 50px 100px;
   align-self: center;
   max-width: 1200px;
   font-family: Roboto;
+  color: lightgrey;
 }
 
 a, a:link, a:visited, a:active {color: inherit;}
@@ -13,6 +21,10 @@ nav {
 
 }
 
+ul{
+  display: inline;
+}
+
 table{
   margin-top: 25px;
   border: 2px dotted #2E4057;
@@ -20,5 +32,5 @@ table{
 }
 
 .date{
-  
+
 }

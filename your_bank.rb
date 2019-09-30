@@ -19,6 +19,8 @@ end
 
 get '/transactions/new' do
   @transactions = Transaction.all
+  @merchants = Merchant.all
+  @categories = Category.all
   erb(:"transactions/new")
 end
 
@@ -32,10 +34,20 @@ get '/transactions/:id' do
   erb(:"/transactions/index")
 end
 
-post '/transactions/index' do
-  Transaction.new(params).save
-  redirect'/transactions/index'
+get '/transactions/:id/edit' do
+  @transactions = Transaction.find(params[:id])
+  erb(:"/transactions/edit")
 end
+
+put '/transactions/:id' do
+  Transaction.new(params).update
+  redirect '/transactions'
+end
+
+# post '/transactions/index' do
+#   Transaction.new(params).save
+#   redirect'/transactions'
+# end
 
 #MERCHANTS
 

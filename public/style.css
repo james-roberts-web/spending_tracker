@@ -1,17 +1,13 @@
-.container{
-  width: 1200px;
-  flex-flow: wrap;
-  position: relative;
-}
-
 body{
-  background-color: #00263e;
   position: relative;
-  margin: 50px 100px;
-  align-self: center;
-  max-width: 1200px;
+  background-color: #00263e;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
   font-family: Roboto;
-  color: lightgrey;
+  color: linen;
+  min-width: 500px;
+  max-width: 1500px;
 }
 
 a, a:link, a:visited, a:active {color: inherit;}
@@ -21,6 +17,11 @@ nav {
 
 }
 
+h1 {
+  font-family: Montserrat sans-serif;
+  font-weight: bolder;
+  color: white;
+}
 ul{
   display: inline;
 }

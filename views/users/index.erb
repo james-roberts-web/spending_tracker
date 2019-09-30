@@ -1,0 +1,9 @@
+<div class="user">
+  <ul>
+    <% @users.each do | user | %>
+    <li>
+      <a href="/users/<%= user.id %>"><%= user.id %></a>
+    </li>
+    <%end%>
+  </ul>
+</div>

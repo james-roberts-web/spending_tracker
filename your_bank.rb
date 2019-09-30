@@ -65,3 +65,11 @@ get '/categories' do
   @categories = Category.all
   erb(:"/categories/index")
 end
+
+
+#USERS
+
+get '/users' do
+  @users = User.all
+  erb(:"/users/index")
+end

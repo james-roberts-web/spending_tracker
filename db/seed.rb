@@ -8,6 +8,8 @@ require('pry')
 user1 = User.new({'user_name' => 'Ben Wyatt', 'funds' => 2000})
 user1.save
 
+#MERCHANTS
+
 merchant1 = Merchant.new({'merchant_name' => 'Tesco'})
 merchant1.save
 
@@ -28,6 +30,9 @@ merchant6.save
 
 merchant7 = Merchant.new({'merchant_name' => 'Bank of Scotland'})
 merchant7.save
+
+merchant8 = Merchant.new({'merchant_name' => 'Sony'})
+merchant8.save
 
 #CATEGORIES
 

@@ -1,10 +1,8 @@
 <div class="categories">
   <ul>
-    <% for category in @categories %>
+    <% @categories.each do | category | %>
     <li>
-      <p>
-        <%= categories.id %>
-      </p>
+      <a href="/categories/<%= category.id %>"><%= category.id %></a>
     </li>
     <%end%>
   </ul>

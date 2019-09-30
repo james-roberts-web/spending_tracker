@@ -18,17 +18,6 @@ class Merchant
     @merchant_name = options['merchant_name']
   end
 
-  def self.delete_all
-    sql = "DELETE FROM merchants"
-    SqlRunner.run(sql)
-  end
-
-  def delete
-    sql = "DELETE FROM merchants WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
   def save
     sql = "INSERT INTO merchants (merchant_name)
     VALUES ($1) RETURNING id"
@@ -37,12 +26,29 @@ class Merchant
     @id = arr['id'].to_i
   end
 
+
+
   def self.all
     sql = "SELECT * FROM merchants"
     values = SqlRunner.run(sql)
-    result = values.map { | merchants | Merchant.new(merchants) }
+    result = values.map {|merchants|Merchant.new(merchants)}
     return result
   end
+
+  def self.delete_all
+    sql = "DELETE FROM merchants"
+    SqlRunner.run(sql)
+  end
+  
+  def delete
+    sql = "DELETE FROM merchants WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+
+
+
 
   def update
     sql = "UPDATE merchants
@@ -56,6 +62,21 @@ class Merchant
     values = [@id]
     arr = SqlRunner.run(sql, values)
     return arr.map{|merchants|Merchant.new(merchants)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM merchants
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql ,values).first
+    merchant = Merchant.new(result)
+    return merchant
+  end
+
+  def delete
+    sql = "DELETE FROM merchants WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
 end

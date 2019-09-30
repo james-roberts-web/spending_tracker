@@ -12,15 +12,15 @@ end
 
 #TRANSACTIONS
 
-get '/transactions' do
-  @transactions = Transaction.all
-  erb(:"transactions/index")
-end
-
 # get '/transactions/index' do
 #   @transaction = Transaction.all
 #   erb(:"transactions/index")
 # end
+
+get '/transactions' do
+  @transactions = Transaction.all
+  erb(:"transactions/index")
+end
 
 get '/transactions/new' do
   @transaction = Transaction.all
@@ -40,13 +40,8 @@ end
 #MERCHANTS
 
 get '/merchants' do
-  @merchant = Merchant.all
-  erb(:merchants)
-end
-
-get '/merchants/index' do
-  @merchant = Merchant.all
-  erb(:"/merchants/index")
+  @merchants = Merchant.all
+  erb(:"merchants/index")
 end
 
 get '/merchants/new' do
@@ -67,11 +62,6 @@ end
 #CATEGORIES
 
 get '/categories' do
-  @category = Category.all
-  erb(:categories)
-end
-
-get '/categories/index' do
-  @category = Category.all
+  @categories = Category.all
   erb(:"/categories/index")
 end

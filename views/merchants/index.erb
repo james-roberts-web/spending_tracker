@@ -1,12 +1,8 @@
 <div class="merchants">
   <ul>
-    <% for @merchant.each do | merchant | %>
+    <% @merchants.each do | merchant | %>
     <li>
-
-      <a href="/merchants/index/<%= @merchant.id %>">
-      <%= @merchant.id %>
-    </a>
-
+      <a href="/merchants/<%= merchant.id %>"><%= merchant.id %></a>
     </li>
     <%end%>
   </ul>

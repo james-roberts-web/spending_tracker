@@ -1,4 +1,4 @@
-<div class="transaction">
+<!-- <div class="transaction">
   <ul>
     <% @transactions.each do | transaction | %>
     <li>
@@ -6,9 +6,11 @@
     </li>
     <% end %>
   </ul>
-</div>
+</div> -->
 
 <h1>Transactions:</h1>
+
+
 
 <table>
   <tr>
@@ -21,8 +23,8 @@
   <% for transaction in @transactions %>
   <tr>
     <td><%= transaction.transaction_date %></td>
-    <td><%= transaction.merchant_id %></td>
-    <td><%= transaction.category_id %></td>
+    <td><%= transaction.name %></td>
+    <td><%= transaction.type %></td>
     <td><%= transaction.amount %></td>
   </tr>
   <% end %>

@@ -69,4 +69,28 @@ class Transaction
     return result
   end
 
+  def name
+    sql = "SELECT merchant_name FROM merchants
+    INNER JOIN transactions
+    ON transactions.merchant_id = merchants.id
+    WHERE transactions.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first['merchant_name']
+    return result
+  end
+
+  def type
+    sql = "SELECT transaction_type FROM categories
+    INNER JOIN transactions
+    ON transactions.category_id = categories.id
+    WHERE transactions.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first['transaction_type']
+    return result
+  end
+
+  def total_spent
+    
+  end
+
 end

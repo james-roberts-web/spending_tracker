@@ -1,0 +1,12 @@
+<p></p>
+
+<form class="" action="/categories/<%= @categories.id %>" method="post">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="category-name">Category Name:</label>
+  <input id="category-name" type="text" name="transaction_type" value="<%= @categories.transaction_type %>"/>
+
+  <input type="submit" value="Update Category details"/>
+
+</form>

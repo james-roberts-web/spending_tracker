@@ -1,13 +1,18 @@
 <div class="merchants">
 
-  <a href="/merchants/new"> (Create new merchant)</a>
-
+  <a href="/merchants/new"> Create new merchant</a>
 
   <ul>
     <% @merchants.each do | merchant | %>
     <li>
       <p><%= merchant.merchant_name %></p>
       <a href="/merchants/<%= merchant.id%>/edit"> (Edit)</a>
+
+      <form class="" action="/merchants/<%= merchant.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete this merchant.">
+      </form>
+
     </li>
     <%end%>
   </ul>

@@ -11,5 +11,5 @@ get '/transactions' do
   @category = Category.all
   @merchant = Merchant.all
   @user = User.all
-  erb(:transactions_index)
+  erb(:"transactions/index")
 end

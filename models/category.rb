@@ -18,17 +18,6 @@ class Category
     @transaction_type = options['transaction_type']
   end
 
-  def self.delete_all
-    sql = "DELETE FROM categories"
-    SqlRunner.run(sql)
-  end
-
-  def delete
-    sql = "DELETE FROM catagories WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
   def save
     sql = "INSERT INTO categories (transaction_type)
     VALUES ($1) RETURNING id"
@@ -44,6 +33,24 @@ class Category
     return result
   end
 
+  def self.delete_all
+    sql = "DELETE FROM categories"
+    SqlRunner.run(sql)
+  end
+
+  def delete
+    sql = "DELETE FROM categories WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update
+    sql = "UPDATE categories
+    SET transaction_type = $1 WHERE id = $2"
+    values = [@transaction_type, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def read
     sql = "SELECT * FROM categories WHERE id = $1"
     values = [@id]
@@ -51,13 +58,23 @@ class Category
     return arr.map{| categories | Category.new(categories)}
   end
 
-  def update
-    sql = "UPDATE categories
-    SET transaction_type = $1 WHERE id = $2"
-    values = [@transaction_type]
+  def self.find(id)
+    sql = "SELECT * FROM categories
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql ,values).first
+    category = Category.new(result)
+    return category
+  end
+
+  def delete
+    sql = "DELETE FROM categories WHERE id = $1"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
-
+  def name
+    return "#{@transaction_type}"
+  end
 
 end

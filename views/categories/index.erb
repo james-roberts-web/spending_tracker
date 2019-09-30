@@ -1,12 +1,18 @@
 <div class="categories">
 
-    <a href="/categories/new"> (Create new category)</a>
+    <a href="/categories/new"> Create new category</a>
 
   <ul>
     <% @categories.each do | category | %>
     <li>
       <p><%= category.transaction_type %></p>
-      <a href="/merchants/<%= category.id%>/edit"> (Edit)</a>
+      <a href="/categories/<%= category.id%>/edit"> (Edit)</a>
+
+      <form class="" action="/categories/<%= category.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete this category.">
+      </form>
+
     </li>
     <%end%>
   </ul>

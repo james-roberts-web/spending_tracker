@@ -54,28 +54,33 @@ post '/merchants' do
   redirect'/merchants'
 end
 
-get '/merchants/:id/edit' do
-  @merchants = Merchant.find(params[:id])
-  erb(:"/merchants/edit")
-end
-
 get '/merchants/:id' do
   @merchants = Merchant.find(params[:id])
   erb(:"/merchants/index")
 end
 
-
+get '/merchants/:id/edit' do
+  @merchants = Merchant.find(params[:id])
+  erb(:"/merchants/edit")
+end
 
 put '/merchants/:id' do
   Merchant.new(params).update
   redirect '/merchants'
 end
 
+delete '/merchants/:id' do
+  destructed = Merchant.find(params[:id])
+  destructed.delete
+  redirect '/merchants'
+end
+
+
 #CATEGORIES
 
 get '/categories' do
   @categories = Category.all
-  erb(:"/categories/index")
+  erb(:"categories/index")
 end
 
 get '/categories/new' do
@@ -86,6 +91,27 @@ end
 post '/categories' do
   Category.new(params).save
   redirect'/categories'
+end
+
+get '/categories/:id' do
+  @categories = Category.find(params[:id])
+  erb(:"/categories/index")
+end
+
+get '/categories/:id/edit' do
+  @categories = Category.find(params[:id])
+  erb(:"/categories/edit")
+end
+
+put '/categories/:id' do
+  Category.new(params).update
+  redirect '/categories'
+end
+
+delete '/categories/:id' do
+  destructed = Category.find(params[:id])
+  destructed.delete
+  redirect '/categories'
 end
 
 

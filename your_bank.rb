@@ -45,13 +45,8 @@ get '/merchants' do
 end
 
 get '/merchants/new' do
-  @merchant = Merchant.all
+  @merchants = Merchant.all
   erb(:"/merchants/new")
-end
-
-get '/merchants/:id' do
-  @merchant = Merchant.read(params[:id])
-  erb(:"/merchants/index")
 end
 
 post '/merchants' do
@@ -59,11 +54,38 @@ post '/merchants' do
   redirect'/merchants'
 end
 
+get '/merchants/:id/edit' do
+  @merchants = Merchant.find(params[:id])
+  erb(:"/merchants/edit")
+end
+
+get '/merchants/:id' do
+  @merchants = Merchant.find(params[:id])
+  erb(:"/merchants/index")
+end
+
+
+
+put '/merchants/:id' do
+  Merchant.new(params).update
+  redirect '/merchants'
+end
+
 #CATEGORIES
 
 get '/categories' do
   @categories = Category.all
   erb(:"/categories/index")
+end
+
+get '/categories/new' do
+  @categories = Category.all
+  erb(:"/categories/new")
+end
+
+post '/categories' do
+  Category.new(params).save
+  redirect'/categories'
 end
 
 

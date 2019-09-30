@@ -26,8 +26,6 @@ class Merchant
     @id = arr['id'].to_i
   end
 
-
-
   def self.all
     sql = "SELECT * FROM merchants"
     values = SqlRunner.run(sql)
@@ -45,10 +43,6 @@ class Merchant
     values = [@id]
     SqlRunner.run(sql, values)
   end
-
-
-
-
 
   def update
     sql = "UPDATE merchants

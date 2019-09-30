@@ -39,7 +39,7 @@ class Merchant
     sql = "DELETE FROM merchants"
     SqlRunner.run(sql)
   end
-  
+
   def delete
     sql = "DELETE FROM merchants WHERE id = $1"
     values = [@id]
@@ -77,6 +77,10 @@ class Merchant
     sql = "DELETE FROM merchants WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def name
+    return "#{@merchant_name}"
   end
 
 end

@@ -1,0 +1,12 @@
+<p>What do you mean you want to change your house, wizard?</p>
+
+<form class="" action="/merchants/<%= @merchant.id %>" method="post">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="merchant-name">Merchant Name:</label>
+  <input id="merchant-name" type="text" name="merchant_name" value="<%= @merchants.merchant_name %>"/>
+
+  <input type="submit" value="Update Merchant details"/>
+
+</form>

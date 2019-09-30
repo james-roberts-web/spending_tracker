@@ -23,7 +23,13 @@ class User
     sql = "DELETE FROM users"
     SqlRunner.run(sql)
   end
-  
+
+  def delete
+    sql = "DELETE FROM users WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def save
     sql = "INSERT INTO users (user_name, funds)
     VALUES ($1, $2) RETURNING id"
@@ -38,8 +44,6 @@ class User
     result = values.map { | users | User.new(users) }
     return result
   end
-
-
 
   def update
     sql = "UPDATE users

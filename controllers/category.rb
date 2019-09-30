@@ -1,0 +1,7 @@
+require('sinatra')
+require('sinatra/reloader')
+require_relative('../models/category.rb')
+require_relative('../models/merchant.rb')
+require_relative('../models/transation.rb')
+require_relative('../models/user.rb')
+also_reload('../models/*')

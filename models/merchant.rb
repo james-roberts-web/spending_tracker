@@ -23,6 +23,12 @@ class Merchant
     SqlRunner.run(sql)
   end
 
+  def delete
+    sql = "DELETE FROM merchants WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def save
     sql = "INSERT INTO merchants (merchant_name)
     VALUES ($1) RETURNING id"

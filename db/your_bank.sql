@@ -24,6 +24,6 @@ CREATE TABLE transactions(
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   merchant_id INT REFERENCES merchants(id) ON DELETE CASCADE,
   category_id INT REFERENCES categories(id) ON DELETE CASCADE,
-  transaction_time TIMESTAMP,
+  transaction_date TIMESTAMP,
   amount INT
 );

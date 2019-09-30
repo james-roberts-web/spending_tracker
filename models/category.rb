@@ -23,6 +23,12 @@ class Category
     SqlRunner.run(sql)
   end
 
+  def delete
+    sql = "DELETE FROM catagories WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def save
     sql = "INSERT INTO categories (transaction_type)
     VALUES ($1) RETURNING id"

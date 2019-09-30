@@ -73,8 +73,6 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-  def name
-    return "#{@merchant_name}"
-  end
+
 
 end

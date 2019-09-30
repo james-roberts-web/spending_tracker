@@ -18,13 +18,18 @@ get '/transactions' do
 end
 
 get '/transactions/new' do
-  @transaction = Transaction.all
+  @transactions = Transaction.all
   erb(:"transactions/new")
 end
 
-get '/transactions/index/:id' do
-  @transaction = Transaction.find(params[:id])
-  erb(:"transactions/index")
+post '/transactions' do
+  Transaction.new(params).save
+  redirect'/transactions'
+end
+
+get '/transactions/:id' do
+  @transactions = Transaction.find(params[:id])
+  erb(:"/transactions/index")
 end
 
 post '/transactions/index' do

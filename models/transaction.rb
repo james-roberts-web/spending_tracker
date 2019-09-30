@@ -37,6 +37,25 @@ class Transaction
     return result
   end
 
+  def self.delete_all
+    sql = "DELETE FROM transactions"
+    SqlRunner.run(sql)
+  end
+
+  def delete
+    sql = "DELETE FROM transactions WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update
+    sql = "UPDATE transactions
+    SET user_id, merchant_id, category_id, transaction_date, amount)
+    VALUES ($1, $2, $3, $4, $5) WHERE id = $6"
+    values = [@user_id, @merchant_id, @category_id, @transaction_date, @amount, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def read
     sql = "SELECT * FROM transactions WHERE id = $1"
     values = [@id]
@@ -53,11 +72,7 @@ class Transaction
     return transaction
   end
 
-  def delete
-    sql = "DELETE FROM transactions WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
+
 
   def find_merchant_name
     sql = "SELECT merchant_name FROM merchants
@@ -89,8 +104,12 @@ class Transaction
     return result
   end
 
-  def total_spent
-    
-  end
+  # def self.total_spent
+  #   amount = self.amount
+  #   spend = amount.map{|amount|amount.amount}
+  #   total = amount.reduce(0){|total_amount, amount|total_amount += amount}
+  #   return total
+  # end
+
 
 end

@@ -1,0 +1,43 @@
+<div class="">
+
+  <form class="" action="/transactions" method="post">
+
+    <!-- USER? -->
+
+
+
+    <!-- AMOUNT? -->
+
+    <label for="amount">Amount:</label>
+    <input id="amount" type="text" name="amount"/>
+
+    <!-- DATE? -->
+
+    <label class="date" for="date">Date:</label>
+    <input type="date" name="transaction_date">
+
+    <!-- MERCHANT ID? -->
+
+    <label for="merchant-id">Merchant Name:</label>
+    <select id="merchant-id" name="merchant_id">
+      <% @transactions.each do | transaction | %>
+      <option value=<%= transaction.merchant_id %>>
+        <%= transaction.name %></option>
+      <% end %>
+      </select>
+
+      <!-- TRANSACTION TYPE? -->
+
+      <label for="category-id">Transaction Type:</label>
+      <select id="category-id" name="category_id">
+        <% @transactions.each do | transaction | %>
+        <option value=<%= transaction.category_id %>>
+          <%= transaction.type %></option>
+        <% end %>
+      </select>
+
+    <input type="submit" value="Log Transaction"/>
+
+  </form>
+
+</div>

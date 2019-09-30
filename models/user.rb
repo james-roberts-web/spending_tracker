@@ -59,4 +59,8 @@ class User
     return arr.map{|users|User.new(users)}
   end
 
+  def total_spent
+    
+  end
+
 end

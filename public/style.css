@@ -1,0 +1,24 @@
+body{
+  background-color: lightgrey;
+  margin: 50px 100px;
+  align-self: center;
+  max-width: 1200px;
+  font-family: Roboto;
+}
+
+a, a:link, a:visited, a:active {color: inherit;}
+
+nav {
+  display: inline-block;
+
+}
+
+table{
+  margin-top: 25px;
+  border: 2px dotted #2E4057;
+  padding: 10px;
+}
+
+.date{
+  
+}

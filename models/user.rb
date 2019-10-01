@@ -59,8 +59,24 @@ class User
     return arr.map{|users|User.new(users)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM users
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql ,values).first
+    users = User.new(result)
+    return users
+  end
+
+  def update
+    sql = "UPDATE users
+    SET (user_name, funds) = ($1, $2) WHERE id = $3"
+    values = [@user_name, @funds, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def total_spent
-    
+
   end
 
 end

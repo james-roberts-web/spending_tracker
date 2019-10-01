@@ -1,36 +1,109 @@
 body{
   position: relative;
   background-color: #00263e;
+  background-image: url("/images/back.jpeg");
+  background-position: top;
+  background-attachment: scroll;
   display: flex;
   justify-content: center;
-  margin: 50px 0;
-  font-family: Roboto;
+  margin: 50px 10%;
+  font-family: 'Montserrat', sans-serif;
   color: linen;
   min-width: 500px;
   max-width: 1500px;
 }
+body::after{
 
-a, a:link, a:visited, a:active {color: inherit;}
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* ---------------- */
+
+.container{
+  width:1000px;
+}
+
+.check-button{
+  background-color: #a32136;
+  /* color:#00263e; */
+  margin: inherit;
+  padding: 20px;
+  width: 25%;
+  border-radius: 10px;
+  border-color: linen;
+  border-style: solid;
+  border-width:2px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.categories{
+  width:1200px;
+}
+
+a, a:link, a:visited, a:active {
+  color: inherit;
+}
 
 nav {
-  display: inline-block;
+
+  display: flex;
+
+  justify-content: space-between;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  list-style-type: none;
+  font-size: 0.8rem;
+}
+
+hr{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: lightblue;
+}
+
+ul{
+
+}
+
+.nav_menu {
 
 }
 
 h1 {
-  font-family: Montserrat sans-serif;
+  font-family: 'DM Serif Display', serif;
   font-weight: bolder;
   color: white;
+  text-decoration: underline;
+  font-size: 1.75rem;
 }
-ul{
+
+h6 {
+  margin-top: inherit;
+  padding-top: 50px;
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  font-size: 5rem;
+
+}
+
+ul {
   display: inline;
 }
 
-table{
+table {
   margin-top: 25px;
   border: 2px dotted #2E4057;
   padding: 10px;
+  width: inherit;
+  /* max-width: 1200px; */
 }
+
 
 .date{
 

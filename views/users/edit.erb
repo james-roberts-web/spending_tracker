@@ -1,0 +1,18 @@
+
+<div class="">
+
+<form class="" action="/users/<%= @users.id %>" method="post">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="user-name">User Name:</label>
+  <input id="user-name" type="text" name="user_name" value="<%= @users.user_name %>"/>
+
+  <label for="funds">Funds:</label>
+  <input id="funds" type="text" name="funds" value="<%= @users.funds %>"/>
+
+  <input type="submit" value="Update User Details"/>
+
+</form>
+
+</div>

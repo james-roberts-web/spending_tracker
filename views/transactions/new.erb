@@ -17,9 +17,9 @@
 
     <label for="merchant-id">Merchant Name:</label>
     <select id="merchant-id" name="merchant_id">
-      <% @transactions.each do | transaction | %>
-      <option value=<%= transaction.merchant_id %>>
-        <%= transaction.name %></option>
+      <% @merchants.each do | merchant | %>
+      <option value=<%= merchant.id %>>
+        <%= merchant.merchant_name %></option>
       <% end %>
       </select>
 
@@ -27,9 +27,9 @@
 
       <label for="category-id">Transaction Type:</label>
       <select id="category-id" name="category_id">
-        <% @transactions.each do | transaction | %>
-        <option value=<%= transaction.category_id %>>
-          <%= transaction.type %></option>
+        <% @categories.each do | category | %>
+        <option value=<%= category.id %>>
+          <%= category.transaction_type %></option>
         <% end %>
       </select>
 

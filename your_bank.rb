@@ -133,3 +133,13 @@ get '/users' do
   @users = User.all
   erb(:"/users/index")
 end
+
+get '/users/:id/edit' do
+  @users = User.find(params[:id])
+  erb(:"/users/edit")
+end
+
+put '/users/:id' do
+  User.new(params).update
+  redirect '/users'
+end

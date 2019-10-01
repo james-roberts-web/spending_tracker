@@ -109,4 +109,10 @@ class Transaction
     return amount
   end
 
+  def self.search_by_date(params)
+    sql = "SELECT * FROM transactions WHERE transaction_date BETWEEN '#{params[:start_date]}' AND '#{params[:end_date]}' "
+    result = SqlRunner.run(sql)
+    return result.map {|transactions|Transaction.new(transactions)}
+  end
+
 end

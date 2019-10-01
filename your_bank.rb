@@ -13,7 +13,12 @@ end
 #TRANSACTIONS
 
 get '/transactions' do
-  @transactions = Transaction.all
+
+  if params['start_date'] && params['end_date']
+    @transactions = Transaction.search_by_date(params)
+  else
+      @transactions = Transaction.all
+  end
   erb(:"transactions/index")
 end
 

@@ -1,35 +1,55 @@
 <div class="transactions">
 
-<h2><i class="fas fa-list-ul"></i> Transactions</h2>
+  <h2><i class="fas fa-list-ul"></i> Transactions</h2>
 
 
-<div class="transactions-sub">
+  <div class="transactions-sub">
 
-    <h3 class="new-transaction-button"><a href="/transactions/new"><i class="fas fa-plus-circle"></i> Log new transaction</a></h3>
+      <h3 class="new-transaction-button"><a href="/transactions/new"><i class="fas fa-plus-circle"></i> Log new transaction</a></h3>
+
+      <h3 class="total-transactions-button"><i class="fas fa-coins"></i> Total = £<%= Transaction.total_amount %></h3>
 
 
-    <h3 class="total-transactions-button"><i class="fas fa-coins"></i> Total = £<%= Transaction.total_amount %></h3>
+
 
 </div>
 
+  <div class="date-form">
+    Filter your transactions by date:
+    <form class="" action="/transactions" method="get">
+      <input type="date" name="start_date" value="">
+      <input type="date" name="end_date" value="">
+      <button type="submit" name="Filter"></button>
+    </form>
 
-<table>
-  <tr>
-    <th class="th1">Date</th>
-    <th>Merchant</th>
-    <th>Category</th>
-    <th>Amount</th>
-  </tr>
+  </div>
 
-  <% for transaction in @transactions %>
-  <% t_date = Date.parse(transaction.transaction_date) %>
-  <tr>
-    <td><%= t_date.strftime('%a %d %b %Y') %></td>
-    <td><%= transaction.name %></td>
-    <td><%= transaction.type %></td>
-    <td>£ <%= transaction.amount %></td>
-  </tr>
-  <% end %>
-</table>
+
+
+
+
+
+  <div class="">
+
+  <table class="transactions-table">
+    <tr>
+      <th class="th1">Date</th>
+      <th>Merchant</th>
+      <th>Category</th>
+      <th>Amount</th>
+    </tr>
+
+    <% for transaction in @transactions %>
+    <% t_date = Date.parse(transaction.transaction_date) %>
+    <tr>
+      <td><%= t_date.strftime('%a %d %b %Y') %></td>
+      <td><%= transaction.name %></td>
+      <td><%= transaction.type %></td>
+      <td>£ <%= transaction.amount %></td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>
 
 </div>

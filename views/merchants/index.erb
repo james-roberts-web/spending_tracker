@@ -2,12 +2,12 @@
 
   <h2><i class="fas fa-store-alt"></i> Merchants</h2>
 
-  <a href="/merchants/new"> Create new merchant</a>
+  <h3 class="new-merchant-button"><a href="/merchants/new"><i class="fas fa-plus-circle"></i> Create new merchant</a></h3>
 
   <ul class="merchant-list">
     <% @merchants.each do | merchant | %>
     <li>
-      <p><%= merchant.merchant_name %></p>
+      <h3><%= merchant.merchant_name %></h3>
       <a href="/merchants/<%= merchant.id%>/edit"> (Edit)</a>
 
       <form class="merchant-delete-button" action="/merchants/<%= merchant.id %>" method="post">

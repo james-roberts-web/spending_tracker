@@ -102,4 +102,11 @@ class Transaction
     return result
   end
 
+  def self.total_amount
+    sql = "SELECT SUM(amount) FROM transactions"
+    hash = SqlRunner.run(sql)
+    amount = hash.first["sum"]
+    return amount
+  end
+
 end

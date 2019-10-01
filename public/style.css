@@ -7,7 +7,7 @@
 body{
   position: relative;
   background-color: #00263e;
-  background-image: url("/images/back.jpeg");
+  background-image: url("/images/back-fade.jpg");
   background-position: top;
   background-attachment: scroll;
   display: flex;
@@ -31,20 +31,8 @@ body::after{
   width:1000px;
 }
 
-.check-button{
-  background-color: #a32136;
-  /* color:#00263e; */
-  margin: inherit;
-  padding: 20px;
-  width: 25%;
-  border-radius: 10px;
-  border-color: linen;
-  border-style: solid;
-  border-width:2px;
-  font-family: 'Roboto';
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1rem;
+.new-transaction-form {
+  width: 100%;
 }
 
 .categories{
@@ -92,10 +80,22 @@ h1 {
 }
 
 h2 {
+  margin-top: 5%;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: 2rem;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+h3 {
+  margin: inherit;
+  margin-top: 5%;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
   letter-spacing: 0.1em;
   color: white;
 }
@@ -113,18 +113,85 @@ ul {
   display: inline;
 }
 
+/* .category-list{
+  display: flex;
+  justify-content: space-between;
+} */
+
+.check-button{
+  background-color: #a32136;
+  margin: inherit;
+  padding: 20px;
+  width: 25%;
+  border-radius: 20px;
+  border-color: linen;
+  border-style: solid;
+  border-width:2px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.new-transaction-button{
+  background-color: linen;
+  color: #a32136;
+  margin: inherit;
+  padding: 1%;
+  width: 25%;
+  border-radius: 20px;
+  border-color: linen;
+  border-style: solid;
+  border-width:2px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.new-merchant-button, .new-category-button, .total-transactions-button{
+  color: linen;
+  margin: inherit;
+  padding: 1%;
+  width: 25%;
+  border-radius: 20px;
+  border-color: linen;
+  border-style: solid;
+  border-width:2px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.transactions-sub{
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
 .transactions-index{
   max-width: 1000px;
 }
 
 table {
+  /* display: flex;
+  justify-content: center; */
   background-color: #00263e;
   margin-top: 25px;
-  border: 2px dotted #2E4057;
+  border: 1px solid linen;
   padding: 10px;
   width: 1000px;
+  padding: 2%;
+  line-height: 150%;
   /* max-width: 1200px; */
 }
+
+td {
+  border: 2px dotted #2E4057;
+}
+
 
 p.merchants-index{
   width:1000px;

@@ -44,11 +44,6 @@ put '/transactions/:id' do
   redirect '/transactions'
 end
 
-# post '/transactions/index' do
-#   Transaction.new(params).save
-#   redirect'/transactions'
-# end
-
 #MERCHANTS
 
 get '/merchants' do

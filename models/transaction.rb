@@ -102,11 +102,4 @@ class Transaction
     return result
   end
 
-#   def amount(array)
-#     total = array.reduce(0){|total_amount, amount|total_amount += amount}
-#     return total
-#   end
-#
-# binding.pry
-
 end

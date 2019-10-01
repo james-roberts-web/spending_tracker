@@ -75,8 +75,4 @@ class User
     SqlRunner.run(sql, values)
   end
 
-  def total_spent
-
-  end
-
 end

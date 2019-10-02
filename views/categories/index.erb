@@ -4,9 +4,9 @@
 
     <h3 class="new-category-button"><a href="/categories/new"><i class="fas fa-plus-circle"></i> Create new category</a></h3>
 
-  <ul class="category-list">
+  <ul>
     <% @categories.each do | category | %>
-    <li>
+    <li class="category-list">
       <h3><%= category.transaction_type %></h3>
       <a href="/categories/<%= category.id%>/edit"> (Edit)</a>
 

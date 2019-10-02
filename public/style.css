@@ -63,13 +63,6 @@ hr{
   color: lightblue;
 }
 
-ul{
-
-}
-
-.nav_menu {
-
-}
 
 h1 {
   font-family: 'DM Serif Display', serif;
@@ -175,6 +168,11 @@ ul {
   max-width: 1000px;
 }
 
+div.date-filter {
+  text-transform: uppercase;
+  margin: 3% 0;
+}
+
 table {
   /* display: flex;
   justify-content: center; */
@@ -200,6 +198,11 @@ p.merchants-index{
 .merchants-list{
   font-size: 2rem;
 }
+
+li.merchant-list, li.category-list{
+    margin-top: -3%;
+}
+
 .date{
 
 }

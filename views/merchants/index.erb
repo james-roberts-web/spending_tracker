@@ -4,9 +4,9 @@
 
   <h3 class="new-merchant-button"><a href="/merchants/new"><i class="fas fa-plus-circle"></i> Create new merchant</a></h3>
 
-  <ul class="merchant-list">
+  <ul>
     <% @merchants.each do | merchant | %>
-    <li>
+    <li class="merchant-list">
       <h3><%= merchant.merchant_name %></h3>
       <a href="/merchants/<%= merchant.id%>/edit"> (Edit)</a>
 

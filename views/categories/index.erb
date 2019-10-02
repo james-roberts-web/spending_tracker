@@ -4,18 +4,30 @@
 
     <h3 class="new-category-button"><a href="/categories/new"><i class="fas fa-plus-circle"></i> Create new category</a></h3>
 
-  <ul>
-    <% @categories.each do | category | %>
-    <li class="category-list">
-      <h3><%= category.transaction_type %></h3>
-      <a href="/categories/<%= category.id%>/edit"> (Edit)</a>
+      <div class="category-list-full">
 
-      <form class="" action="/categories/<%= category.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete this category.">
-      </form>
+        <ul>
+          <% @categories.each do | category | %>
+          <li class="category-list">
+            <h3><%= category.transaction_type %></h3>
 
-    </li>
-    <%end%>
-  </ul>
+            <div class="category-edit-options">
+              <div class="category-edit-button">
+
+                <a href="/categories/<%= category.id%>/edit"> Edit</a>
+
+              </div>
+
+              <form id="delete_button" action="/categories/<%= category.id %>" method="post">
+
+                <input type="hidden" name="_method" value="delete">
+                <input class="category-delete-button" type="submit" value="Delete">
+              </form>
+
+            </div>
+
+          </li>
+          <%end%>
+        </ul>
+      </div>
 </div>

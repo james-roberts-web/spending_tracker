@@ -89,7 +89,6 @@ delete '/merchants/:id' do
   redirect '/merchants'
 end
 
-
 #CATEGORIES
 
 get '/categories' do
@@ -127,7 +126,6 @@ delete '/categories/:id' do
   destructed.delete
   redirect '/categories'
 end
-
 
 #USERS
 

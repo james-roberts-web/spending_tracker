@@ -2,15 +2,15 @@
 
   <h2><i class="fas fa-store-alt"></i> Edit merchant details</h2>
 
-<form class="" action="/merchants/<%= @merchants.id %>" method="post">
+  <form class="" action="/merchants/<%= @merchants.id %>" method="post">
 
-  <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="_method" value="put">
 
-  <label for="merchant-name">Merchant Name:</label>
-  <input id="merchant-name" type="text" name="merchant_name" value="<%= @merchants.merchant_name %>"/>
+    <label for="merchant-name">Merchant Name:</label>
+    <input id="merchant-name" type="text" name="merchant_name" value="<%= @merchants.merchant_name %>"/>
 
-  <input type="submit" value="Update Merchant details"/>
+    <input type="submit" value="Update Merchant details"/>
 
-</form>
+  </form>
 
 </div>

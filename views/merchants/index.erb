@@ -6,28 +6,28 @@
 
   <div class="merchant-list-full">
 
-  <ul>
-    <% @merchants.each do | merchant | %>
-    <li class="merchant-list">
-      <h3><%= merchant.merchant_name %></h3>
+    <ul>
+      <% @merchants.each do | merchant | %>
+      <li class="merchant-list">
+        <h3><%= merchant.merchant_name %></h3>
 
-        <div class="merchant-edit-options">
-          <div class="merchant-edit-button">
+          <div class="merchant-edit-options">
+            <div class="merchant-edit-button">
 
-            <a href="/merchants/<%= merchant.id%>/edit"> Edit</a>
+              <a href="/merchants/<%= merchant.id%>/edit"> Edit</a>
 
+              </div>
+
+              <form id="delete_button" action="/merchants/<%= merchant.id %>" method="post">
+
+                <input type="hidden" name="_method" value="delete">
+                <input class="merchant-delete-button" type="submit" value="Delete">
+
+              </form>
             </div>
-
-            <form id="delete_button" action="/merchants/<%= merchant.id %>" method="post">
-
-              <input type="hidden" name="_method" value="delete">
-              <input class="merchant-delete-button" type="submit" value="Delete">
-
-        </form>
-      </div>
-    </li>
-    <%end%>
-  </ul>
+          </li>
+      <%end%>
+    </ul>
 
   </div>
 

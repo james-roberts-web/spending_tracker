@@ -10,68 +10,68 @@
 
       <h3 class="total-transactions-button"><i class="fas fa-coins"></i> Total = £<%= Transaction.total_amount %></h3>
 
-</div>
+  </div>
 
-<div class="transaction-filters">
+  <div class="transaction-filters">
 
   <!-- <h4>Filter your transactions:</h4> -->
 
-  <div class="transaction-filters-inner">
+    <div class="transaction-filters-inner">
 
-    <div class="date-filter">
+      <div class="date-filter">
 
-      <form class="date-form" action="/transactions" method="get">
-        <p>transactions from: </p>
-        <input class="date-search-form" type="date" name="start_date" value="">
-        <p>to:</p>
-        <input class="date-search-form" type="date" name="end_date" value="">
-        <button class="filter-search-button" type="submit" name="Filter">Search</button>
-      </form>
+        <form class="date-form" action="/transactions" method="get">
+          <p>transactions from: </p>
+          <input class="date-search-form" type="date" name="start_date" value="">
+          <p>to:</p>
+          <input class="date-search-form" type="date" name="end_date" value="">
+          <button class="filter-search-button" type="submit" name="Filter">Search</button>
+        </form>
 
-    </div>
+      </div>
 
-    <div class="category-filter">
+      <div class="category-filter">
 
-      <form class="category-filter-form" action="/transactions" method="get">
-        <p>by category:</p>
-        <select class="category-select" id="category-id" name="category_id" value="">
-          <option selected disabled value="-1">Select Category</option>
-        <% @categories.each do | category | %>
-          <option value=<%= category.id %>>
-            <%= category.transaction_type %>
-          </option>
-          <% end %>
-        </select>
-        <button class="filter-search-button" type="submit" name="Filter">Search</button>
-      </form>
+        <form class="category-filter-form" action="/transactions" method="get">
+          <p>by category:</p>
+          <select class="category-select" id="category-id" name="category_id" value="">
+            <option selected disabled value="-1">Select Category</option>
+          <% @categories.each do | category | %>
+            <option value=<%= category.id %>>
+              <%= category.transaction_type %>
+            </option>
+            <% end %>
+          </select>
+          <button class="filter-search-button" type="submit" name="Filter">Search</button>
+        </form>
 
+      </div>
     </div>
   </div>
-</div>
-
 
   <div class="">
 
     <h2>Your Transactions:</h2>
-  <table class="transactions-table">
-    <tr>
-      <th class="th1">Date</th>
-      <th>Merchant</th>
-      <th>Category</th>
-      <th>Amount</th>
-    </tr>
 
-    <% for transaction in @transactions %>
-    <% t_date = Date.parse(transaction.transaction_date) %>
-    <tr>
-      <td><%= t_date.strftime('%a %d %b %Y') %></td>
-      <td><%= transaction.name %></td>
-      <td><%= transaction.type %></td>
-      <td>£ <%= transaction.amount %></td>
-    </tr>
-    <% end %>
-  </table>
+    <table class="transactions-table">
+      <tr>
+        <th class="th1">Date</th>
+        <th>Merchant</th>
+        <th>Category</th>
+        <th>Amount</th>
+      </tr>
 
-</div>
+      <% for transaction in @transactions %>
+      <% t_date = Date.parse(transaction.transaction_date) %>
+      <tr>
+        <td><%= t_date.strftime('%a %d %b %Y') %></td>
+        <td><%= transaction.name %></td>
+        <td><%= transaction.type %></td>
+        <td>£ <%= transaction.amount %></td>
+      </tr>
+      <% end %>
+    </table>
+
+  </div>
 
 </div>

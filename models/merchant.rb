@@ -73,6 +73,4 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-
-
 end

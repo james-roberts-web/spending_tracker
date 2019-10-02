@@ -120,4 +120,5 @@ class Transaction
     result = SqlRunner.run(sql)
     return result.map {|transactions|Transaction.new(transactions)}
   end
+  
 end

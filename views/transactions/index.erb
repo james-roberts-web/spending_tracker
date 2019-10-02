@@ -21,11 +21,11 @@
     <div class="date-filter">
 
       <form class="date-form" action="/transactions" method="get">
-        <p>by date from: </p>
-        <input type="date" name="start_date" value="">
+        <p>transactions from: </p>
+        <input class="date-search-form" type="date" name="start_date" value="">
         <p>to:</p>
-        <input type="date" name="end_date" value="">
-        <button type="submit" name="Filter">Search</button>
+        <input class="date-search-form" type="date" name="end_date" value="">
+        <button class="filter-search-button" type="submit" name="Filter">Search</button>
       </form>
 
     </div>
@@ -34,7 +34,7 @@
 
       <form class="category-filter-form" action="/transactions" method="get">
         <p>by category:</p>
-        <select id="category-id" name="category_id" value="">
+        <select  id="category-id" name="category_id" value="">
           <option selected disabled value="-1">Select Category</option>
         <% @categories.each do | category | %>
           <option value=<%= category.id %>>
@@ -42,7 +42,7 @@
           </option>
           <% end %>
         </select>
-        <button type="submit" name="Filter">Search</button>
+        <button class="filter-search-button" type="submit" name="Filter">Search</button>
       </form>
 
     </div>

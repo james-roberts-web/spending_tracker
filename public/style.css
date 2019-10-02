@@ -69,17 +69,6 @@ h2 {
   color: white;
 }
 
-/* h2 {
-  margin-top: 5%;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  color: white;
-} */
-
-
 h3 {
   margin: inherit;
   text-transform: uppercase;
@@ -136,7 +125,9 @@ ul {
   font-size: 1rem;
 }
 
-.new-merchant-button, .new-category-button, .total-transactions-button{
+.new-merchant-button,
+.new-category-button,
+.total-transactions-button{
   color: linen;
   margin: inherit;
   padding: 1%;
@@ -158,7 +149,6 @@ ul {
   justify-content: space-between;
 }
 
-
 div.transaction-filters{
   background-color: #00263e;
   margin-top: 25px;
@@ -171,32 +161,25 @@ div.transaction-filters{
   font-size: 0.8rem;
 }
 
+.date-form, .category-filter-form {
+
+  display: flex;
+  align-self: center;
+}
+
+
+div.date-filter, div.category-filter{
+  text-transform: uppercase;
+  justify-content: space-between;
+  align-content: center;
+  }
+
 div.transaction-filters-inner{
-  margin-top: -40px;
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-
-div.date-filter{
-
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  align-content: flex-end;
-  }
-
-.date-form {
-  display: flex;
-}
-
-div.category-filter{
-
-  text-transform: uppercase;
-  display: flex;
-
-  }
-
 
 div.transaction-form{
   display: flex;
@@ -205,13 +188,16 @@ div.transaction-form{
   border: 1px solid linen;
   border-radius: 10px;
   padding: 10px;
-  }
-
-div.amount-and-date{
-display: flex;
 }
 
-div.new-trans-amount, div.new-trans-date, div.new-trans-merchant, div.new-trans-category {
+div.amount-and-date{
+  display: flex;
+}
+
+div.new-trans-amount,
+div.new-trans-date,
+div.new-trans-merchant,
+div.new-trans-category {
   margin-top: inherit;
   padding:10px;
   height: 25px;
@@ -220,7 +206,28 @@ div.new-trans-amount, div.new-trans-date, div.new-trans-merchant, div.new-trans-
   font-size: 2rem;
 }
 
-div.category-edit-button, div.merchant-edit-button, div.user-edit-button {
+.filter-search-button {
+    margin: 10px;
+    font-family: 'Montserrat';
+    font-size: 0.65rem;
+    padding: 4px;
+    color: linen;
+    background-color: #00263e;
+    border: 1px solid linen;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.date-search-form{
+  margin: 0 10px;
+  align-self: center;
+  justify-content: center;
+  height:20px;
+}
+
+div.category-edit-button,
+div.merchant-edit-button,
+div.user-edit-button {
   align-self: center;
   padding:10px;
   height: 18px;
@@ -231,7 +238,8 @@ div.category-edit-button, div.merchant-edit-button, div.user-edit-button {
   text-transform: uppercase;
 }
 
-.merchant-delete-button, .category-delete-button {
+.merchant-delete-button,
+.category-delete-button {
     margin-left: 10px;
     margin-top: 4px;
     font-family: Montserrat;
@@ -244,7 +252,8 @@ div.category-edit-button, div.merchant-edit-button, div.user-edit-button {
     text-transform: uppercase;
 }
 
-.merchant-id-input, .category-id-input {
+.merchant-id-input,
+.category-id-input {
   margin-top: 40px;
   padding-top: 20px;
   height: 15px;
@@ -258,70 +267,28 @@ div.merchant-and-category{
   margin: 10px 0;
   }
 
-div.merchant-list-full, div.category-full-list{
+div.merchant-list-full,
+div.category-full-list{
   margin-top:inherit;
   width: 100%;
 }
 
-li.merchant-list, li.category-list, li.user-list{
+li.merchant-list,
+li.category-list,
+li.user-list{
   display: flex;
   justify-content: space-between;
   align-content: center;
   width: 100%;
 }
 
-div.merchant-edit-options, div.category-edit-options, div.user-edit-options{
+div.merchant-edit-options,
+div.category-edit-options,
+div.user-edit-options{
   display: flex;
 }
 
-#delete_button{
-  color:red;
-}
-
-/* input[type=text]  {
-  width: 1fr;
-  padding: 12px 20px;
-  margin: 10px;
-  box-sizing: border-box;
-} */
-
-/* #amount{
-  width: 2fr;
-  padding: 12px 20px;
-  margin: 10px 0;
-  box-sizing: border-box;
-} */
-
-/* input[type=select] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 10px 0;
-  box-sizing: border-box;
-} */
-
-
-
-/* input[type=submit] {
-  margin: 20px 0;
-  background-color: #578e3b;
-  height: 2em;
-  border-radius: 6px;
-  color: white;
-  text-transform: uppercase;
-  font-size: 2em;
-  width: 100%;
-} */
-
-/* NEW TRANSACTION PAGE END */
-
-div.date-filter {
-  text-transform: uppercase;
-  margin: 3% 0;
-}
-
 table {
-  /* display: flex;
-  justify-content: center; */
   background-color: #00263e;
   margin-top: 25px;
   padding: 10px;

@@ -97,6 +97,7 @@ ul {
 .check-button{
   background-color: #a32136;
   margin: inherit;
+  margin-top: -125px;
   padding: 20px;
   width: 25%;
   border-radius: 20px;

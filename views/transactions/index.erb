@@ -15,16 +15,30 @@
 </div>
 
   <div class="date-filter">
-    Filter your transactions by date:
+    <p>Filter your transactions by date:</p>
     <form class="" action="/transactions" method="get">
-      <input type="date" name="start_date" value="">
-      <input type="date" name="end_date" value="">
-      <button type="submit" name="Filter"></button>
+      from: <input type="date" name="start_date" value="">
+      to: <input type="date" name="end_date" value="">
+      <button type="submit" name="Filter">Search</button>
     </form>
 
   </div>
 
+  <div class="category-filter">
 
+    <form class="" action="/transactions" method="get">
+      <select id="category-id" name="category_id" value="">
+        <option selected disabled value="-1">Select Category</option>
+      <% @categories.each do | category | %>
+        <option value=<%= category.id %>>
+          <%= category.transaction_type %>
+        </option>
+        <% end %>
+      </select>
+      <button type="submit" name="Filter">Search</button>
+    </form>
+
+  </div>
 
 
 

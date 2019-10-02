@@ -115,4 +115,9 @@ class Transaction
     return result.map {|transactions|Transaction.new(transactions)}
   end
 
+  def self.search_by_category(params)
+    sql = "SELECT * FROM transactions WHERE category_id = '#{params[:category_id]}'"
+    result = SqlRunner.run(sql)
+    return result.map {|transactions|Transaction.new(transactions)}
+  end
 end

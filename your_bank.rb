@@ -13,11 +13,13 @@ end
 #TRANSACTIONS
 
 get '/transactions' do
-
+  @categories = Category.all
   if params['start_date'] && params['end_date']
     @transactions = Transaction.search_by_date(params)
+  elsif params['category_id'] != nil && params['category_id'] != "-1"
+    @transactions = Transaction.search_by_category(params)
   else
-      @transactions = Transaction.all
+    @transactions = Transaction.all
   end
   erb(:"transactions/index")
 end

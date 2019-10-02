@@ -1,8 +1,6 @@
 * {
   align-content: center;
-
 }
-
 
 body{
   position: relative;
@@ -20,7 +18,6 @@ body{
 }
 
 body::after{
-
   opacity: 0.5;
   z-index: -1;
 }
@@ -29,10 +26,6 @@ body::after{
 
 .container{
   width:1000px;
-}
-
-.new-transaction-form {
-  width: 100%;
 }
 
 .categories{
@@ -45,7 +38,6 @@ a, a:link, a:visited, a:active {
 }
 
 nav {
-
   display: flex;
   text-decoration: none;
   justify-content: space-between;
@@ -62,7 +54,6 @@ hr{
   margin-top: 20px;
   color: lightblue;
 }
-
 
 h1 {
   font-family: 'DM Serif Display', serif;
@@ -99,17 +90,11 @@ h6 {
   font-family: 'DM Serif Display', serif;
   color: white;
   font-size: 5rem;
-
 }
 
 ul {
   display: inline;
 }
-
-/* .category-list{
-  display: flex;
-  justify-content: space-between;
-} */
 
 .check-button{
   background-color: #a32136;
@@ -167,6 +152,81 @@ ul {
 .transactions-index{
   max-width: 1000px;
 }
+
+div.transaction-form{
+  background-color: #00263e;
+  margin-top: 25px;
+  border: 1px solid linen;
+  padding: 10px;
+  }
+
+div.amount-and-date{
+display: flex;
+}
+
+div.new-trans-amount, div.new-trans-date, div.new-trans-merchant, div.new-trans-category {
+  margin-top: inherit;
+  padding:10px;
+  height: 25px;
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  font-size: 2rem;
+}
+
+.merchant-id-input {
+  margin-top: 40px;
+  padding-top: 20px;
+  height: 15px;
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  font-size: 2rem;
+}
+
+div.merchant-and-category{
+  display: flex;
+  margin: 10px 0;
+  }
+
+input[type=text]  {
+  /* width: 1fr; */
+  /* padding: 12px 20px; */
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+#amount{
+  width: 2fr;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+input[type=select] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 3fr;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+} */
+
+input[type=submit] {
+  margin: 20px 0;
+  background-color: #578e3b;
+  height: 2em;
+  border-radius: 6px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+  width: 100%;
+}
+
+/* NEW TRANSACTION PAGE END */
 
 div.date-filter {
   text-transform: uppercase;

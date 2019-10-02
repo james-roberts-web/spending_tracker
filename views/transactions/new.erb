@@ -2,41 +2,72 @@
 
   <h2><i class="fas fa-list-ul"></i> New Transaction</h2>
 
-  <form class="new-transaction-form" action="/transactions" method="post">
-    <input type="hidden" name="user_id" value="1">
+  <div class="transaction-form">
 
-    <!-- AMOUNT? -->
+    <form class="new-transaction-form" action="/transactions" method="post">
+      <input type="hidden" name="user_id" value="1">
 
-    <label for="amount">Amount:</label>
-    <input id="amount" type="text" name="amount"/>
+      <!-- AMOUNT? -->
 
-    <!-- DATE? -->
+      <div class="amount-and-date">
 
-    <label class="date" for="date">Date:</label>
-    <input type="date" name="transaction_date">
+        <div class="new-trans-amount">
 
-    <!-- MERCHANT ID? -->
+          <label for="amount">Amount:</label>
+          <input id="amount" type="text" name="amount"/>
 
-    <label for="merchant-id">Merchant Name:</label>
-    <select id="merchant-id" name="merchant_id">
-      <% @merchants.each do | merchant | %>
-      <option value=<%= merchant.id %>>
-        <%= merchant.merchant_name %></option>
-      <% end %>
-      </select>
+        </div>
 
-      <!-- TRANSACTION TYPE? -->
+      <!-- DATE? -->
 
-      <label for="category-id">Transaction Type:</label>
-      <select id="category-id" name="category_id">
-        <% @categories.each do | category | %>
-        <option value=<%= category.id %>>
-          <%= category.transaction_type %></option>
-        <% end %>
-      </select>
+        <div class="new-trans-date">
 
-    <input type="submit" value="Log Transaction"/>
+          <label class="date" for="date">Date:</label>
+          <input type="date" name="transaction_date">
 
-  </form>
+        </div>
+
+      </div>
+
+      <!-- MERCHANT ID? -->
+      <div class="merchant-and-category">
+
+        <div class="new-trans-merchant">
+
+        <label class="merchant-id-input" for="merchant-id">Merchant Name:</label>
+
+        <select id="merchant-id" name="merchant_id">
+          <% @merchants.each do | merchant | %>
+          <option value=<%= merchant.id %>>
+            <%= merchant.merchant_name %></option>
+          <% end %>
+          </select>
+
+          </div>
+
+        <!-- TRANSACTION TYPE? -->
+
+          <div class="new-trans-category">
+
+          <label for="category-id">Transaction Type:</label>
+
+          <select id="category-id" name="category_id">
+            <% @categories.each do | category | %>
+            <option value=<%= category.id %>>
+              <%= category.transaction_type %></option>
+            <% end %>
+          </select>
+
+          </div>
+
+        </div>
+
+
+          <input class="log-transaction" type="submit" value="Log Transaction"/>
+
+
+    </form>
+
+  </div>
 
 </div>

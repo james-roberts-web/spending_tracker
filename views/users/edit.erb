@@ -2,18 +2,23 @@
 
   <h2><i class="fas fa-cog"></i> Edit your details</h2>
 
-<form class="" action="/users/<%= @users.id %>" method="post">
 
-  <input type="hidden" name="_method" value="put">
+  <div class="merch-cat-input-div">
 
-  <label for="user-name">User Name:</label>
-  <input id="user-name" type="text" name="user_name" value="<%= @users.user_name %>"/>
+    <form class="" action="/users/<%= @users.id %>" method="post">
 
-  <label for="funds">Funds:</label>
-  <input id="funds" type="text" name="funds" value="<%= @users.funds %>"/>
+      <input type="hidden" name="_method" value="put">
+      
+      <label for="user-name">User Name:</label>
+      <input class="merch-cat-input" id="user-name" type="text" name="user_name" value="<%= @users.user_name %>"/>
 
-  <input type="submit" value="Update User Details"/>
+      <label for="funds">Funds:</label>
+      <input class="funds-input" id="funds" type="text" name="funds" value="<%= @users.funds %>"/>
 
-</form>
+      <input class="merch-cat-save" type="submit" value="Update"/>
+
+    </form>
+
+  </div>
 
 </div>

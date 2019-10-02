@@ -159,6 +159,7 @@ div.transaction-filters{
   border-style: solid;
   border-width:1px;
   font-size: 0.8rem;
+  margin-bottom:-25px;
 }
 
 .date-form, .category-filter-form {
@@ -206,6 +207,10 @@ div.new-trans-category {
   font-size: 2rem;
 }
 
+select.category-select{
+  align-self: center;
+  margin: 0 10px;
+}
 .filter-search-button {
     margin: 10px;
     font-family: 'Montserrat';

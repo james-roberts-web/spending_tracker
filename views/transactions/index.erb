@@ -34,7 +34,7 @@
 
       <form class="category-filter-form" action="/transactions" method="get">
         <p>by category:</p>
-        <select  id="category-id" name="category_id" value="">
+        <select class="category-select" id="category-id" name="category_id" value="">
           <option selected disabled value="-1">Select Category</option>
         <% @categories.each do | category | %>
           <option value=<%= category.id %>>

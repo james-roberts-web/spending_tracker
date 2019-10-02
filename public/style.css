@@ -326,3 +326,11 @@ li.merchant-list, li.category-list, li.user-list{
   border-style: solid;
   border-width:1px;
 }
+
+.footer{
+  margin-top: 25px;
+  display: flex;
+  font-size: 0.75rem;
+  position: relative;
+  align-self: baseline;
+}

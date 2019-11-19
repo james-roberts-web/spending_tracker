@@ -54,7 +54,7 @@ category5.save
 category6 = Category.new({'transaction_type' => 'Fuel'})
 category6.save
 
-category7 = Category.new({'transaction_type' => 'Mortgage'})
+category7 = Category.new({'transaction_type' => 'Mortgage / Rent'})
 category7.save
 
 #TRANSACTIONS
@@ -64,25 +64,25 @@ transaction1 = Transaction.new({
   'merchant_id' => 1,
   'category_id' => 1,
   'transaction_date' => ('2019-09-29'),
-  'amount' => 599
+  'amount' => 25
   })
 transaction1.save
 
 transaction2 = Transaction.new({
   'user_id' => 1,
   'merchant_id' => 4,
-  'category_id' => 3,
-  'transaction_date' => ('2019-09-29'),
-  'amount' => 699
+  'category_id' => 4,
+  'transaction_date' => ('2019-09-30'),
+  'amount' => 5
   })
 transaction2.save
 
 transaction3 = Transaction.new({
   'user_id' => 1,
   'merchant_id' => 2,
-  'category_id' => 6,
-  'transaction_date' => ('2019-09-29'),
-  'amount' => 250
+  'category_id' => 2,
+  'transaction_date' => ('2019-10-02'),
+  'amount' => 20
   })
 transaction3.save
 
@@ -90,8 +90,8 @@ transaction4 = Transaction.new({
   'user_id' => 1,
   'merchant_id' => 6,
   'category_id' => 2,
-  'transaction_date' => ('2019-09-29'),
-  'amount' => 400
+  'transaction_date' => ('2019-10-02'),
+  'amount' => 250
   })
 transaction4.save
 
